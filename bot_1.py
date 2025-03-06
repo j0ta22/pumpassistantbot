@@ -14,7 +14,7 @@ import threading
 import time
 
 # Define el token de tu bot de Telegram
-TOKEN = '7812625623:AAE8ExJ-eDi0sgcRg1aD89id9Cl3TTPBRPc'
+TOKEN = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 bot = telebot.TeleBot(TOKEN)
 # Configura el cliente de Solana
 client = Client("https://api.mainnet-beta.solana.com")
