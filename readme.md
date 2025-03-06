@@ -1,52 +1,80 @@
-<h1 align="center">CelestialDocs</h1>
+---
+title: Getting Started
+hide_breadcrumbs: true
+---
+import Callout from "@/components/Callout.astro";
 
-<p align="center">
-<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/HYP3R00T/CelestialDocs/deploy.yml?style=for-the-badge&labelColor=363a4f&color=8aadf4">
-</p>
+**_Pump Agent Assistant_**  is a Telegram bot designed to facilitate the creation, management, and trading of Solana-based tokens using the Pump Portal API. The bot allows users to: 
 
-**CelestialDocs** is a simple and versatile documentation template built with Astro. It provides a clean and minimal interface for creating documentation websites, leveraging the power of Astro and Tailwind CSS for a streamlined user experience.
+- Create new Solana tokens with custom metadata.
+- Buy and sell tokens using an easy-to-use interface.
+- Manage their wallets securely.
 
 ## Features
+- **Wallet Management:**
+  - Create a new Solana wallet.
+  - Import an existing Solana wallet.
+  - View wallet balance.
 
-- **Astro Build**: Optimized for fast and efficient static site generation.
-- **Tailwind CSS**: Customizable and responsive design with Tailwind CSS.
-- **Shadcn UI**: Integrated components for a modern UI experience.
-- **Customizable**: Easily configure colors, icons, and layout to fit your needs.
-- **Documentation Ready**: Ideal for creating comprehensive and organized documentation.
+- **Token Creation:**
+  - Launch a new token with customized details.
+  - Specify an initial purchase amount.
+  - Upload custom token images.
 
-## Documentation
+- **Token Trading:**
+  - Buy tokens by specifying the amount and slippage.
+  - Sell tokens with multiple percentage options (50%, 75%, 100%).
 
-For detailed documentation on how to use and configure CelestialDocs, visit [celestialdocs.hyperoot.dev](https://celestialdocs.hyperoot.dev).
 
-## Contributing
+## Commands
 
-Contributions are welcome! If you have suggestions, improvements, or bug fixes, please open an issue or submit a pull request.
+#### `/start`
+Starts the bot and presents wallet management options.
 
-1. **Fork the Repository**.
-2. **Create a New Branch**:
+#### `/wallet`
+Displays the current wallet's public key and SOL balance.
 
-   ```bash
-   git checkout -b feature/your-feature
-   ```
+#### `/launch`
+Initiates the token creation process by requesting the following inputs:
+1. Token name
+2. Token symbol
+3. Image URL
+4. Website URL
+5. Telegram link
+6. Twitter link
+7. Initial purchase amount
 
-3. **Commit Your Changes**:
+Upon confirmation, the bot launches the token and provides transaction details.
 
-   ```bash
-   git commit -am 'Add some feature'
-   ```
+#### `/buy`
+Prompts the user to enter the token mint address, purchase amount, and other necessary details for buying tokens.
 
-4. **Push to the Branch**:
+#### `/sell`
+Prompts the user to enter the token mint address and initiate the selling process.
 
-   ```bash
-   git push origin feature/your-feature
-   ```
+## Bot Workflow
+1. **Wallet Creation or Import:** Users must first create or import a wallet to interact with the bot.
+2. **Token Launch:**
+   - User provides token details.
+   - The bot uploads metadata to IPFS.
+   - The bot interacts with the Pump Portal API to create the token.
+3. **Token Trading:**
+   - Users can buy and sell tokens with preset percentage options.
 
-5. **Open a Pull Request**.
+## Error Handling
+Common error messages and solutions:
 
-## License
+- `❌ Missing wallet or token data.` - Ensure you have created or imported a wallet and provided the required token details.
+- `❌ Insufficient funds.` - Check if you have enough SOL to cover transaction fees.
+- `❌ Invalid token address.` - Verify the token mint address before attempting any action.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Contact
+For support or questions, contact [support@pumpassistant.com](mailto:support@pumpassistant.com).
 
-Built by HYP3R00T. The source code is available on [GitHub](https://github.com/yourusername/celestialdocs). Crafted with ❤️ and care.
+
+
+
+## Next Steps
+
+- **Configure:** Learn about common options in ["Guides"](/guides).
